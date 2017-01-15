@@ -1,0 +1,13 @@
+<div class="row">
+  <% if logged_in? %>  
+    <div class="span0 well text-center">
+      <%= link_to program_register_path(program), method: 'post', remote: true do %>
+      Register
+      <% end %> 
+    </div>
+  <% end %>
+  <div class="span8 well"> 
+    <h4><%= program.name %></h4>
+    <h5><%= program.description %></h5>
+  </div>
+</div>

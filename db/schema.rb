@@ -11,10 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170115144423) do
+ActiveRecord::Schema.define(version: 20170115190309) do
 
   create_table "commute_modes", force: true do |t|
     t.string "mode"
+  end
+
+  create_table "commutefit_submissions", force: true do |t|
+    t.string   "month"
+    t.integer  "year"
+    t.integer  "miles_biked"
+    t.integer  "miles_walked"
+    t.integer  "miles_ran"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "commutefit_submissions_users", force: true do |t|
+    t.integer "user_id"
+    t.integer "commutefit_submission_id"
   end
 
   create_table "employers", force: true do |t|
@@ -23,10 +38,17 @@ ActiveRecord::Schema.define(version: 20170115144423) do
 
   create_table "programs", force: true do |t|
     t.string "name"
+    t.text   "description"
+    t.string "slug"
   end
 
   create_table "user_commute_modes", force: true do |t|
     t.integer "commute_mode_id"
+    t.integer "user_id"
+  end
+
+  create_table "user_programs", force: true do |t|
+    t.integer "program_id"
     t.integer "user_id"
   end
 
@@ -44,6 +66,7 @@ ActiveRecord::Schema.define(version: 20170115144423) do
     t.datetime "updated_at"
     t.string   "first_name"
     t.string   "last_name"
+    t.integer  "employer_id"
   end
 
 end

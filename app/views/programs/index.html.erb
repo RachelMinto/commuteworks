@@ -4,14 +4,6 @@
 <hr />
 <p></p>
 
-<div class="span8 well">
-CommuteFit Program
-</div>
-
-<div class="span8 well">
-Carpool Program
-</div>
-
-<div class="span8 well">
-Emergency Ride Home Program
-</div>
+<% @programs.each do |program| %>
+  <%= render 'program', program: program %>
+<% end %>
