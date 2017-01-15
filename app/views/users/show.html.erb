@@ -1,0 +1,16 @@
+<p class="lead">
+  Profile: <%= @user.first_name %> <%= @user.last_name %>
+  <hr/>
+</p>
+
+<div class="well">
+  <dl class='dl-horizontal'>
+  <dt>Modes of Commuting:</dt>
+    <% @user.commute_modes.each do |mode| %>
+      <dd><%= mode.mode %></dd>
+    <% end %>
+  </dl>
+</div>
+
+<h5>Activity</h5>
+
