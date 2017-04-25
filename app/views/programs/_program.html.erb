@@ -1,10 +1,22 @@
 <div class="row">
-  <% if logged_in? %>  
-    <div class="span0 well text-center">
-      <%= link_to program_register_path(program), method: 'post', remote: true do %>
-      Register
-      <% end %> 
-    </div>
+  <% if logged_in? %>
+    <% if registered_for?(program.slug) %> 
+      <div class="span0 well text-center">
+        All set!
+      </div>
+    <% else %>
+      <div class="span0 well text-center">
+        <% if program.slug == 'carpool' %>
+          <%= link_to new_carpool_path, method: 'get' do %>
+            Register
+          <% end %>
+        <% else %>
+          <%= link_to program_register_path(program), method: 'post', remote: true do %>
+            Register
+          <% end %>
+        <% end %>
+      </div>  
+    <% end %>
   <% end %>
   <div class="span8 well"> 
     <h4><%= program.name %></h4>

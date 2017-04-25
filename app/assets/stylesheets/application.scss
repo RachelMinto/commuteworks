@@ -3,42 +3,16 @@
  * listed below.
  *
  * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
  *
- * You're free to add application-wide styles to this file and they'll appear at the top of the
- * compiled file, but it's generally better to create a new file per style scope.
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
  *
- *= require_self
  *= require_tree .
+ *= require_self
  */
-
- @import "bootstrap";
-
- .container {
-  margin-left: 135px
-}
-
-.navbar .nav > li > a.brand {
-  padding-left: 0px;
-}
-
-.quiet {
-  color: #ababab;
-}
-
-div.nav_item {
-  margin-left: 25px;
-  float: left;
-}
-
-.label  {
-  a, a:hover, a:focus {
-    color: #fff;
-    text-decoration: none;
-  }
-}
-
-div.comment_votes {
-  padding: 10px;
-}
-
+ 
+@import "bootstrap-sprockets";
+@import "bootstrap";

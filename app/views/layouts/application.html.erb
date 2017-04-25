@@ -6,30 +6,22 @@
     <title>CommuteWorks</title>
     <meta name="description" content="">
     <meta name="author" content="">
-    <%= stylesheet_link_tag "application", :media => "all" %>
-    <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag "application"%>
+    <%= javascript_include_tag "application" %>       
     <%= yield(:head) %>
   </head>
   <body>
     <header>
-      <div class="navbar">
-        <div class="navbar-inner">
-          <div class="container">
-            <%= render 'layouts/navigation' %>
-          </div>
-        </div>
-      </div>
+      <%= render 'layouts/navigation' %>
     </header>
-    <div id="main" role="main">
+    <div id="main">
       <div class="container">
-         <div class="row">
-          <div class="span12">
+          <div class="span8">
             <%= render 'layouts/messages' %>
             <%= yield %>
           </div>
-        </div>
-        <footer>
+        <footer>     
         </footer>
       </div> <!--! end of .container -->
     </div> <!--! end of #main -->

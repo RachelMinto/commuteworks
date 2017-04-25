@@ -1,0 +1,6 @@
+<% if registered_for?(params[:id]) %>
+  alert("You've already registered for that program.")
+<% else %>
+  <% current_user.programs << Program.find_by(slug: params[:id]) %>
+  alert("Registration successful.")
+<% end %>

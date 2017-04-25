@@ -7,6 +7,9 @@ class User < ActiveRecord::Base
   has_many :user_programs
   has_many :programs, through: :user_programs
 
+  has_many :user_carpools
+  has_many :carpools, through: :user_carpools
+
   belongs_to :employer
 
   has_many :commutefit_submissions_users
@@ -20,5 +23,5 @@ class User < ActiveRecord::Base
   validates :zipcode, presence: true
   validates :first_name, presence: true
   validates :last_name, presence: true
-  validates :employer_id, presence: true  
+  validates :employer_id, presence: true
 end

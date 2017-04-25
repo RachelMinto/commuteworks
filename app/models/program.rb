@@ -1,7 +1,7 @@
 class Program < ActiveRecord::Base
-  # include Sluggable
+  include Sluggable
   has_many :user_programs
   has_many :users, through: :user_programs
 
-  # sluggable_column :name  
+  sluggable_column :name  
 end

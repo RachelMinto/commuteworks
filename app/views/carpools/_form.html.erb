@@ -1,0 +1,31 @@
+<div class="well">
+  <%= form_for @carpool do |f| %>
+    <%= render 'shared/error', obj: @carpool %>
+    <div class='control-group'>
+      <%= f.label :origin_location %>
+      <%= f.text_field :origin_location %>
+    </div>
+    <div class='control-group'>
+      <%= f.label :parking_location %>
+      <%= f.text_field :parking_location %>
+    </div>
+    <div class='control-group'>
+      <%= f.label :days_per_week %>
+      <%= f.number_field :days_per_week %>
+    </div>
+    <div class='control-group'>
+      <%= f.label :Carpool_Partner_Email_Address %>
+      <%= f.text_field :carpooler_2_email %>
+    </div>
+    <div class='control-group'>
+      <%= f.label :second_carpool_partner_email_address %>
+      <%= f.text_field :carpooler_3_email %>
+    </div>
+    <div class='control-group'>
+      <%= f.label :third_carpool_partner_email_address %>
+      <%= f.text_field :carpooler_4_email %>
+    </div>          
+    <%= f.submit @carpool.new_record? ? "Register" : "Update Carpool Profile", class: 'btn btn-success' %>
+  <% end %>
+</div>
+

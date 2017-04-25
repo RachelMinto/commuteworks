@@ -11,7 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170115190309) do
+ActiveRecord::Schema.define(version: 20170116154806) do
+
+  create_table "carpools", force: true do |t|
+    t.string   "origin_location"
+    t.string   "parking_location"
+    t.integer  "days_per_week"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
+    t.string   "carpooler_2_email"
+    t.string   "carpooler_3_email"
+    t.string   "carpooler_4_email"
+  end
 
   create_table "commute_modes", force: true do |t|
     t.string "mode"
@@ -40,6 +52,11 @@ ActiveRecord::Schema.define(version: 20170115190309) do
     t.string "name"
     t.text   "description"
     t.string "slug"
+  end
+
+  create_table "user_carpools", force: true do |t|
+    t.integer "carpool_id"
+    t.integer "user_id"
   end
 
   create_table "user_commute_modes", force: true do |t|
